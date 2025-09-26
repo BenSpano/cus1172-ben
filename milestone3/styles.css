@@ -1,0 +1,58 @@
+body {
+  margin: 0;
+
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.button_group {
+  position: absolute;    
+  top: 60%;            
+  left: 50%;            
+  transform: translate(-50%, -60%); 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Now 4 per row */
+  grid-gap: 30px;
+  justify-items: center;
+  align-items: center;
+  width: min(95vw, 1000px); /* widened a bit for 4 columns */
+}
+
+.buttons img {
+  width: 200px;                
+  height: auto;
+  cursor: pointer;            
+  transition: transform 0.1s ease-in-out; 
+}
+
+.buttons a {
+  cursor: hand;
+}
+
+.buttons img:hover {
+  transform: scale(1.1); 
+
+}
+
+h1 {
+  color: rgb(0, 0, 0);
+  font-family: Georgia, Arial, Times, 'Times New Roman', serif;
+  text-align: center;
+}
+
+h2 {
+  color: rgb(0, 0, 0);
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+}
+
+p {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  text-align: center;
+}
