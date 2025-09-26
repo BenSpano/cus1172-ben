@@ -16,11 +16,11 @@ body {
 
 .buttons {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); 
-  grid-gap: 40px; 
-  justify-items: center; 
+  grid-template-columns: repeat(4, 1fr); /* Now 4 per row */
+  grid-gap: 30px;
+  justify-items: center;
   align-items: center;
-  width: min(90vw, 800px);
+  width: min(95vw, 1000px); /* widened a bit for 4 columns */
 }
 
 .buttons img {
