@@ -1,37 +1,146 @@
 {
   "burgers": [
     {
-      "id": "classic-beef",
       "title": "Classic Beef Burger",
-      "steps": [
-        {
-          "id": "step1",
-          "type": "multiple-choice",
-          "instruction": "Choose your bun",
-          "options": ["Sesame", "Brioche", "Lettuce Wrap"],
-          "feedback": null
-        },
-        {
-          "id": "step2",
-          "type": "text",
-          "instruction": "Enter number of sauce servings",
-          "feedback": {
-            "condition": "amount > 3",
-            "message": "Too much sauce might overpower the flavor!"
-          }
-        },
-        {
-          "id": "step3",
-          "type": "image-selection",
-          "instruction": "Choose your burger presentation",
-          "imageOptions": [
-            { "url": "img/presentation1.jpg", "isCorrect": false },
-            { "url": "img/presentation2.jpg", "isCorrect": true },
-            { "url": "img/presentation3.jpg", "isCorrect": false }
-          ],
-          "feedback": null
-        }
-      ]
+      "id": "classic-beef"
+    },
+    {
+      "id": "grilled-chicken",
+      "title": "Grilled Chicken Burger"
+    }
+  ],
+  "steps": [
+    {
+      "type": "multiple-choice",
+      "burgerId": "classic-beef",
+      "key": "bun",
+      "stepNumber": 1,
+      "id": 1,
+      "instruction": "Select bun:",
+      "options": ["Sesame", "Brioche", "Lettuce Wrap"],
+      "feedbackType": null
+    },
+    {
+      "instruction": "Select protein:",
+      "id": 2,
+      "stepNumber": 2,
+      "burgerId": "classic-beef",
+      "type": "multiple-choice",
+      "key": "protein",
+      "options": ["Beef", "Chicken", "Vegan"],
+      "feedbackType": null
+    },
+    {
+      "feedbackMessage": "Too saucy!",
+      "placeholder": "e.g., 2",
+      "feedbackType": "too-much-sauce",
+      "feedbackThreshold": 3,
+      "key": "sauceServings",
+      "type": "text",
+      "stepNumber": 3,
+      "burgerId": "classic-beef",
+      "id": 3,
+      "instruction": "How many pumps?"
+    },
+    {
+      "instruction": "Select cheese:",
+      "options": ["None", "Swiss", "American"],
+      "key": "cheese",
+      "stepNumber": 4,
+      "burgerId": "classic-beef",
+      "type": "multiple-choice",
+      "id": 4,
+      "feedbackType": null
+    },
+    {
+      "feedbackType": null,
+      "id": 5,
+      "burgerId": "classic-beef",
+      "type": "multiple-choice",
+      "stepNumber": 5,
+      "key": "sauce",
+      "instruction": "Select sauce:",
+      "options": ["Ketchup", "Mayo", "Spicy Mayo"]
+    },
+    {
+      "imageOptions": [
+        { "label": "Tray", "url": "assets/classic-plate.jpg", "id": "classic-plate" },
+        { "id": "basket", "label": "To-Go Box", "url": "assets/basket.jpg" }
+      ],
+      "feedbackType": null,
+      "key": "presentation",
+      "type": "image-selection",
+      "burgerId": "classic-beef",
+      "stepNumber": 6,
+      "id": 6,
+      "instruction": "Choose burger presentation style:"
+    },
+
+    {
+      "instruction": "Select bun:",
+      "options": ["Sesame", "Brioche", "Lettuce Wrap"],
+      "type": "multiple-choice",
+      "feedbackType": null,
+      "key": "bun",
+      "stepNumber": 1,
+      "burgerId": "grilled-chicken",
+      "id": 7
+    },
+    {
+      "stepNumber": 2,
+      "options": ["Grilled", "Fried", "Spicy Fried"],
+      "instruction": "Select chicken style:",
+      "burgerId": "grilled-chicken",
+      "type": "multiple-choice",
+      "key": "protein",
+      "feedbackType": null,
+      "id": 8
+    },
+    {
+      "id": 9,
+      "feedbackThreshold": 3,
+      "instruction": "How many pumps?",
+      "placeholder": "e.g., 2",
+      "key": "sauceServings",
+      "type": "text",
+      "feedbackType": "too-much-sauce",
+      "burgerId": "grilled-chicken",
+      "stepNumber": 3,
+      "feedbackMessage": "Too much sauce!"
+    },
+    {
+      "id": 10,
+      "stepNumber": 4,
+      "type": "multiple-choice",
+      "feedbackType": null,
+      "options": ["American", "Pepperjack", "Swiss", "None"],
+      "instruction": "Select cheese:",
+      "burgerId": "grilled-chicken",
+      "key": "cheese"
+    },
+    {
+      "feedbackMessage": "Spicy chipotle might be unpleasant on this bun.",
+      "id": 11,
+      "type": "multiple-choice",
+      "stepNumber": 5,
+      "options": ["Honey Mustard", "BBQ Sauce", "Spicy Mayo"],
+      "feedbackType": "bun-sauce-combo",
+      "instruction": "Select sauce:",
+      "burgerId": "grilled-chicken",
+      "key": "sauce"
+    },
+    {
+      "stepNumber": 6,
+      "imageOptions": [
+        { "label": "Tray", "url": "assets/tray.jpg", "id": "board" },
+        { "url": "assets/to-go.jpg", "id": "basket", "label": "To-Go Box" }
+      ],
+      "burgerId": "grilled-chicken",
+      "feedbackType": null,
+      "id": 12,
+      "instruction": "Choose burger presentation style:",
+      "key": "presentation",
+      "type": "image-selection"
     }
   ]
 }
