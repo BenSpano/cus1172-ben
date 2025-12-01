@@ -64,8 +64,8 @@
     },
     {
       "imageOptions": [
-        { "label": "Tray", "url": "assets/classic-plate.jpg", "id": "classic-plate" },
-        { "id": "basket", "label": "To-Go Box", "url": "assets/basket.jpg" }
+        { "label": "Tray", "url": "assets/tray.jpg", "id": "board" },
+        { "url": "assets/to-go.jpg", "id": "basket", "label": "To-Go Box" }
       ],
       "feedbackType": null,
       "key": "presentation",
